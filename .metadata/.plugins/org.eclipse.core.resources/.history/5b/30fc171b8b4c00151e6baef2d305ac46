@@ -1,0 +1,14 @@
+
+public class loginAction {
+
+	String Vzid;
+	public String execute()
+	{
+		return "success";
+	}
+
+private String getVzid()
+{
+	return Vzid;
+}
+}

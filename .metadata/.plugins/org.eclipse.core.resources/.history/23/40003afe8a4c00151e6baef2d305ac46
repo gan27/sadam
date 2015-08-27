@@ -1,0 +1,8 @@
+
+public class loginAction {
+	public String execute()
+	{
+		return "success";
+	}
+	
+}
