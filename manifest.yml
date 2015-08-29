@@ -1,0 +1,5 @@
+---
+applications:
+- name: onev
+  memory: 256M
+  no-route: true
