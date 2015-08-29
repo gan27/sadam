@@ -9,33 +9,36 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
-    <path id="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath">
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/annotations-api.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/catalina-ant.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/catalina-ha.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/catalina-tribes.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/catalina.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/ecj-3.6.2.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/el-api.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/jasper-el.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/jasper.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/jsp-api.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/servlet-api.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/tomcat-api.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/tomcat-coyote.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/tomcat-dbcp.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/tomcat-i18n-es.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/tomcat-i18n-fr.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/tomcat-i18n-ja.jar"/>
-        <pathelement location="../../../../../../Program Files (x86)/New folder/lib/tomcat-util.jar"/>
-    </path>
     <path id="Web App Libraries.libraryclasspath"/>
     <path id="EAR Libraries.libraryclasspath"/>
     <path id="onev.classpath">
         <pathelement location="build/classes"/>
-        <path refid="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath"/>
         <path refid="Web App Libraries.libraryclasspath"/>
         <path refid="EAR Libraries.libraryclasspath"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/annotations-api.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/catalina.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/catalina-ant.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/catalina-ha.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/catalina-tribes.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/ecj-4.4.2.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/el-api.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/jasper.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/jasper-el.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/jsp-api.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/servlet-api.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/tomcat7-websocket.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/tomcat-api.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/tomcat-coyote.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/tomcat-dbcp.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/tomcat-jdbc.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/tomcat-util.jar"/>
+        <pathelement location="D:/apache-tomcat-7.0.64-windows-x64/apache-tomcat-7.0.64/lib/websocket-api.jar"/>
+        <pathelement location="../../../../Downloads/selenium-server-standalone-2.46.0.jar"/>
+        <pathelement location="../../../../Downloads/selenium-java-2.46.0/selenium-2.46.0/selenium-java-2.46.0.jar"/>
+        <pathelement location="../../../../Downloads/sqlite-jdbc-3.8.11.1.jar"/>
     </path>
     <target name="init">
         <mkdir dir="build/classes"/>
@@ -50,6 +53,7 @@
         <delete dir="build/classes"/>
     </target>
     <target depends="clean" name="cleanall"/>
+    <target depends="build" name="test"/>
     <target depends="build-subprojects,build-project" name="build"/>
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
@@ -72,5 +76,10 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
+    </target>
+    <target name="TestCase1">
+        <java classname="seleniumScript.TestCase1" failonerror="true" fork="yes">
+            <classpath refid="onev.classpath"/>
+        </java>
     </target>
 </project>
